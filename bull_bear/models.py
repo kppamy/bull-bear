@@ -1,9 +1,15 @@
 from django.db import models
 
-class Gamble(models.Model):
-	description = models.CharField(max_length=200)
+class Event(models.Model):
+    name = models.CharField(max_length=200)
+    description = models.CharField(max_length=200)
+    def __str__(self):
+        return self.name
 
-class Option(models.Model):
-	gamble = models.ForeignKey(Gamble, on_delete=models.CASCADE)
-	choice_text = models.CharField(max_length=200)
+class Outcome(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200)
+    description = models.CharField(max_length=200)
+    def __str__(self):
+        return self.event.name + ": " + self.name
 

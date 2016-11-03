@@ -1,10 +1,15 @@
 from django import http, shortcuts
 
+from . import models
+
 def index(request):
-    return shortcuts.render(request, 'bull_bear/index.html', {})
+    context = {
+        'latest_events': models.Event.objects.order_by('-id')[:5]
+    }
+    return shortcuts.render(request, 'bull_bear/index.html', context)
 
 def user(request, user_id):
-	return http.HttpResponse(user_id)
+    return shortcuts.render(request, 'bull_bear/user.html', {})
 
-def gamble(request, gamble_id):
-	return http.HttpResponse(gamble_id)
+def event(request, event_id):
+	return http.HttpResponse(event_id)

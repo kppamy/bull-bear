@@ -25,7 +25,10 @@ SECRET_KEY = 'xa!3nken(f^5@%02xhm*_@b+q(w&af-wvhmaz*)!p93*-46cae'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'brendan.zapto.org',
+    'brendan.city',
+]
 
 
 # Application definition
@@ -76,8 +79,12 @@ WSGI_APPLICATION = 'bull_bear.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+	'NAME': 'bullbear',
+	'USER': 'brendan',
+	'PASSWORD': 'dbpassword',
+	'HOST': 'localhost',
+	'PORT': '',	
     }
 }
 

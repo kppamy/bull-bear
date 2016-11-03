@@ -1,0 +1,19 @@
+{% if latest_events %}
+    <ul>
+        {% for event in latest_events %}
+            <li>
+                {{ event.description }}
+                outcomes:
+                <ul>
+                    {% for outcome in event.outcome_set.all %}
+                        <li>
+                            {{ outcome.name }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No events available.</p>
+{% endif %}
