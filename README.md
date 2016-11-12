@@ -14,6 +14,10 @@
 - [ ] url/view to wager 1.0 on a prediction
 - [ ] prediction updates odds
 - [ ] url/view to determine an event
+- [ ] users have prediction currency
+- [ ] users have reputation
 
 ### Prediction frontend
-- [ ] 
+- [ ] button/link to wager on an outcome
+- [ ] profile shows reputation and PC
+- [ ] events show live predictions
