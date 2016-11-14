@@ -3,8 +3,8 @@
 ## First Pass
 
 ### Account management
-- [ ] login
-- [ ] logout
+- [x] login
+- [x] logout
 - [ ] update password
 - [ ] account/profile page
 
