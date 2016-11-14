@@ -4,7 +4,7 @@ from django.db.models import signals
 from django import dispatch
 
 STARTING_REPUTATION = 0.0
-STARTING_PREDICTION_CURRENCY = 0.0
+STARTING_PREDICTION_CURRENCY = 5.0
 
 class Event(models.Model):
     name = models.CharField(max_length=200)
