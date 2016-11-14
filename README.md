@@ -9,7 +9,7 @@
 - [ ] account/profile page
 
 ### Prediction backend
-- [ ] outcomes have probabilities/odds
+- [x] outcomes have probabilities/odds
 - [ ] prediction model
 - [ ] url/view to wager 1.0 on a prediction
 - [ ] prediction updates odds
