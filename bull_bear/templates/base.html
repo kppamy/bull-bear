@@ -1,4 +1,13 @@
 <html>
+{% block header %}
+<header>
+{{ if user }}
+You are logged in as some user.
+{{ else }}
+
+{{ endif }}
+</header>
+{% endblock %}
 {% block content %}
 {% endblock %}
 </html>
