@@ -8,6 +8,7 @@ urlpatterns = [
     urls.url(r'^$', views.index, name='index'),
     urls.url(r'^event/(?P<event_id>[0-9]+)/$', views.event, name='event'),
     urls.url(r'^user/(?P<user_id>[0-9]+)/$', views.user, name='user'),
+    urls.url(r'^predict/', views.predict),
     urls.url(r'^admin/', admin.site.urls),
 ]
 

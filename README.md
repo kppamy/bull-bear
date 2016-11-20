@@ -11,7 +11,8 @@
 ### Prediction backend
 - [x] outcomes have probabilities/odds
 - [x] prediction model
-- [ ] url/view to wager 1.0 on a prediction
+- [x] url/view to wager 1.0 on a prediction
+- [ ] prediction view checks and subtracts reputation
 - [ ] prediction updates odds
 - [ ] url/view to determine an event
 - [x] users have prediction currency
@@ -20,5 +21,5 @@
 ### Prediction frontend
 - [ ] button/link to wager on an outcome
 - [ ] profile shows reputation and PC
-- [ ] events show live predictions
+- [ ] events/outcomes show predictions
 - [ ] header with user info
