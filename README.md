@@ -26,4 +26,4 @@
 
 to run locally:
 
-python3 manage.py <command> --settings'bull_bear.local_settings'
+python3 manage.py \<command\> --settings'bull_bear.local_settings'
