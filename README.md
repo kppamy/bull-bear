@@ -23,3 +23,7 @@
 - [ ] profile shows reputation and PC
 - [ ] events/outcomes show predictions
 - [ ] header with user info
+
+to run locally:
+
+python3 manage.py <command> --settings'bull_bear.local_settings'
