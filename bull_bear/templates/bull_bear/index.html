@@ -1,22 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 {% if latest_events %}
-    <ul>
-        {% for event in latest_events %}
-            <li>
-                {{ event.description }}
-                outcomes:
-                <ul>
-                    {% for outcome in event.outcome_set.all %}
-                        <li>
-                            {{ outcome.name }}
-                        </li>
-                    {% endfor %}
-                </ul>
-            </li>
-        {% endfor %}
-    </ul>
+  <ul>
+    {% for event in latest_events %}
+      <li>
+        <a href="/event/{{ event.id }}">{{ event.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
 {% else %}
-    <p>No events available.</p>
+  <p>No events available.</p>
 {% endif %}
 {% endblock %}
