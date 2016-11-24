@@ -4,18 +4,34 @@ from django.contrib.auth import decorators
 from . import models
 
 def index(request):
+  return shortcuts.render(request, 'bull_bear/index.html')
+
+def events(request):
   context = {
     'latest_events': models.Event.objects.order_by('-id')[:5]
   }
-  return shortcuts.render(request, 'bull_bear/index.html', context)
+  return shortcuts.render(request, 'bull_bear/events.html', context)
 
 def profile(request, user_id):
   return shortcuts.render(request, 'bull_bear/profile.html', {})
 
 def event(request, event_id):
+  event = shortcuts.get_object_or_404(models.Event, pk=event_id)
+  outcomes = [
+    {
+      'outcome': outcome,
+      'odds': 1.0 / outcome.likelihood,
+      'staked_reputation': sum([p.staked_reputation
+        for p in outcome.prediction_set.filter(user_id=request.user.id)]),
+      'earnable_reputation': sum([p.earnable_reputation
+        for p in outcome.prediction_set.filter(user_id=request.user.id)]),
+    }
+    for outcome in event.outcome_set.all()
+  ]
   context = {
     'user': request.user,
-    'event': shortcuts.get_object_or_404(models.Event, pk=event_id),
+    'event': event,
+    'outcomes': outcomes,
   }
   if request.user.is_authenticated():
     context.update({

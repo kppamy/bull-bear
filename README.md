@@ -20,9 +20,9 @@
 
 ### Prediction frontend
 - [x] button/link to wager on an outcome
-- [ ] profile shows reputation and PC
-- [ ] events/outcomes show predictions
-- [ ] header with user info
+- [x] profile shows reputation
+- [x] events/outcomes show predictions
+- [x] header with user info
 
 to run locally:
 

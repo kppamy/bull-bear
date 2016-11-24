@@ -4,15 +4,19 @@
 <h1>{{ event.name }}</h1>
 <h2>{{ event.description }}</h2>
 <ul>
-  {% for outcome in event.outcome_set.all %}
-  	<li>
-  		{{ outcome.name }}
-  		{{ outcome.description }}
-  		likelihood: {{ outcome.likelihood }}
+  {% for o in outcomes %}
+  	<li>{{ o.outcome.name}} - {{ o.outcome.description }}
+      <ul>
+  		  <li>likelihood: {{ o.outcome.likelihood }}</li>
+        <li>staked_reputation: {{ o.staked_reputation }}</li>
+        <li>odds: {{ o.odds }}</li>
+        <li>reputation if you win: +{{ o.earnable_reputation }}</li>
+      </ul>
+      place a bet:
   		<form action="/make_prediction/" method="POST">
   			{% csrf_token %}
         <input type="number" name="reputation" min="1" step="1" value="1"/>
-        <input type="hidden" name="outcome_id" value="{{ outcome.id }}"/>
+        <input type="hidden" name="outcome_id" value="{{ o.outcome.id }}"/>
         <input type="submit" value="Submit"/>
   		</form>
   	</li>

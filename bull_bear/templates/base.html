@@ -1,9 +1,12 @@
 <html>
 {% block header %}
 <header>
-Header here.
 {% if user.is_authenticated %}
-	You are logged in as: {{ user }}. <a href="/logout/">logout</a>
+	You are logged in as: {{ user }}.
+    Reputation: {{ user.profile.reputation }}
+    <a href="/profile/{{ user.id }}">profile</a>
+    <a href="/events/">events</a>
+    <a href="/logout/">logout</a>
 {% else %}
 	<a href="/login/">login</a>
 {% endif %}
